@@ -1,5 +1,7 @@
 import { constants, access, readFile } from "node:fs/promises";
 
+import { info } from "@actions/core";
+
 type ArgsType = {
 	versionFile: string;
 	packageName: string;
@@ -21,10 +23,10 @@ export async function run(args: ArgsType): Promise<ReturnType> {
 		throw new Error(`Cannot read file ${versionFile}`);
 	}
 
-	const lines = (await readFile(versionFile, "utf8")).split("\n");
+	const lines = (await readFile(versionFile, { encoding: "utf-8" })).split(/\r?\n/g);
 	for (const line of lines) {
 		if (line.startsWith(packageName)) {
-			return { version: line.split(/\s/)[1] };
+			return { version: line.split(/\s+/)[1] };
 		}
 	}
 	throw new Error(`Cannot find version for package ${packageName}`);

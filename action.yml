@@ -6,7 +6,7 @@ inputs:
   version-file:
     description: 'Path to .tool-versions'
     required: true
-    default: './.tool-version'
+    default: './.tool-versions'
   package-name:
     description: 'Package name you want to get a version'
     required: true
