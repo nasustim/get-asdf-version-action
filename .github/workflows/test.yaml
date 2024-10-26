@@ -16,7 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: make dummy file for test
-        run: echo "dart 2.0.0\nnodejs 14.0.0" >> .tool-versions
+        run: |
+            echo "dart 2.0.0
+            nodejs 14.0.0" >> .tool-versions
       - uses: ./
         id: target
         with:
@@ -24,6 +26,6 @@ jobs:
       - name: assert
         run: |
           if [ "2.0.0" != "${{ steps.target.outputs.version }}" ]; then
-            echo "The strings are equal"
+            exit 1
           fi
       

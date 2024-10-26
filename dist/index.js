@@ -25652,6 +25652,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.run = run;
 const promises_1 = __nccwpck_require__(1455);
+const core_1 = __nccwpck_require__(7484);
 function run(args) {
     return __awaiter(this, void 0, void 0, function* () {
         const { versionFile, packageName } = args;
@@ -25664,10 +25665,11 @@ function run(args) {
         catch (e) {
             throw new Error(`Cannot read file ${versionFile}`);
         }
-        const lines = (yield (0, promises_1.readFile)(versionFile, "utf8")).split("\n");
+        const lines = (yield (0, promises_1.readFile)(versionFile, { encoding: "utf-8" })).split(/\r?\n/g);
         for (const line of lines) {
+            (0, core_1.info)(line);
             if (line.startsWith(packageName)) {
-                return { version: line.split(/\s/)[1] };
+                return { version: line.split(/\s+/)[1] };
             }
         }
         throw new Error(`Cannot find version for package ${packageName}`);
