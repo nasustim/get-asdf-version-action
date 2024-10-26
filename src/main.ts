@@ -21,11 +21,11 @@ export async function run(args: ArgsType): Promise<ReturnType> {
 		throw new Error(`Cannot read file ${versionFile}`);
 	}
 
-  const lines = (await readFile(versionFile, "utf8")).split("\n")
-  for (const line of lines) {
-    if (line.startsWith(packageName)) {
-      return { version: line.split(/\s/)[1] };
-    }
-  }
-  throw new Error(`Cannot find version for package ${packageName}`);
+	const lines = (await readFile(versionFile, "utf8")).split("\n");
+	for (const line of lines) {
+		if (line.startsWith(packageName)) {
+			return { version: line.split(/\s/)[1] };
+		}
+	}
+	throw new Error(`Cannot find version for package ${packageName}`);
 }
