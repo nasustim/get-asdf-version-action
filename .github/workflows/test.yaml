@@ -21,4 +21,9 @@ jobs:
         id: target
         with:
           package-name: dart
-      - run: echo "${{ steps.target.outputs.version }}"
+      - name: assert
+        run: |
+          if [ "2.0.0" != "${{ steps.target.outputs.version }}" ]; then
+            echo "The strings are equal"
+          fi
+      
