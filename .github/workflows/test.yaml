@@ -15,8 +15,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - name: make dummy file for test
+        run: echo "dart 2.0.0\nnodejs 14.0.0" >> .tool-versions
       - uses: ./
         id: target
         with:
           package-name: dart
-      - run: echo "result ${{ steps.target.outputs.version }}"
+      - run: echo "${{ steps.target.outputs.version }}"
