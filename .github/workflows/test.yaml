@@ -41,7 +41,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: |
-          if [ -n "${ git status -s }" ]; then
+          if [ -n "$( git status -s )" ]; then
             echo "Please commit dist files"
             exit 1
           fi
