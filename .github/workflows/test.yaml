@@ -15,6 +15,6 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - uses: ./../action.yml
+      - uses: ./
         with:
           package-name: dart
