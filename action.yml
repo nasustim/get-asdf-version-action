@@ -1,0 +1,21 @@
+name: 'Get a version from asdf'
+description: 'Get a version name from asdf configuration'
+author: 'nasustim'
+
+inputs:
+  version-file:
+    description: 'Path to .tool-versions'
+    required: true
+    default: './.tool-version'
+  package-name:
+    description: 'Package name you want to get a version'
+    required: true
+    default: ''
+
+outputs:
+  version:
+    description: 'Your output description here'
+
+runs:
+  using: node20
+  main: src/index.js
