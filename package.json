@@ -4,7 +4,7 @@
     "@actions/github": "6.0.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.1.2",
     "@types/node": "22.16.5",
     "@vercel/ncc": "0.38.3",
     "@vitest/browser": "3.2.4",
