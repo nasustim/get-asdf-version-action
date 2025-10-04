@@ -9,7 +9,7 @@
     "@vercel/ncc": "0.38.4",
     "@vitest/browser": "3.2.4",
     "memfs": "4.46.1",
-    "typescript": "5.9.2",
+    "typescript": "5.9.3",
     "vitest": "3.2.4"
   },
   "scripts": {
