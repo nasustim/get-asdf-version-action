@@ -7,10 +7,10 @@
     "@biomejs/biome": "1.9.4",
     "@types/node": "22.19.19",
     "@vercel/ncc": "0.38.4",
-    "@vitest/browser": "3.2.4",
+    "@vitest/browser": "3.2.6",
     "memfs": "4.57.6",
     "typescript": "6.0.3",
-    "vitest": "3.2.4"
+    "vitest": "3.2.6"
   },
   "scripts": {
     "biome:fix": "npx @biomejs/biome check --write ./",
