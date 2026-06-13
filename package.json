@@ -6,7 +6,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/node": "22.19.21",
-    "@vercel/ncc": "0.38.4",
+    "@vercel/ncc": "0.44.0",
     "@vitest/browser": "3.2.6",
     "memfs": "4.57.7",
     "typescript": "6.0.3",
