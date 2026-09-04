@@ -8,7 +8,7 @@
     "@types/node": "22.20.1",
     "@vercel/ncc": "0.45.0",
     "@vitest/browser": "3.2.7",
-    "memfs": "4.68.1",
+    "memfs": "4.71.0",
     "typescript": "6.0.3",
     "vitest": "3.2.7"
   },
