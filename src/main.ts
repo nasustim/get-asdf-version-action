@@ -1,7 +1,5 @@
 import { constants, access, readFile } from "node:fs/promises";
 
-import { info } from "@actions/core";
-
 type ArgsType = {
 	versionFile: string;
 	packageName: string;
